@@ -2,9 +2,75 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-### Define the Goal
+### Define the Target
 
-An advanced multi-agent system that evaluates Python code efficiency and automatically generates optimized versions based on improvement suggestions.
+Design and build an advanced multi-agent framework that analyzes Python code efficiency and outputs optimized code based on suggested improvements.
+
+### Roles of Each Agent
+
+| Agent       | Role                  | Task                                                                                                                                                 |
+| ----------- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Agent A** | Complexity Analyst    | Analyze time and space complexity and identify inefficiencies.                                                                                       |
+| **Agent B** | Optimizer             | Suggest algorithmic improvements to make the script faster and more memory-efficient.                                                                |
+| **Agent C** | Profiler              | Estimate the script’s runtime, CPU/GPU utilization, and memory footprint, and identify potential bottlenecks and scalability issues.                 |
+| **Agent D** | Code Quality Reviewer | Review code style, readability, and maintainability, and suggest clean-code improvements.                                                            |
+| **Agent E** | Coordinator           | Synthesize the findings from all agents into one comprehensive, cohesive report.                                                                     |
+| **Agent F** | Coder Generator       | Generate an optimized Python script based on suggested improvements, while maintaining original functionality and adhering to Python best practices. |
+
+### Architecture Overview
+
+```
+Input Script → Orchestrator → [Agent A, B, C, D in parallel]
+                                     ↓
+                  Suggested Improvements(from all agents) → [Agent E]
+                                                                ↓
+                              Input Script → [Agent F] ← Combined Report
+                                                 ↓
+                                          Optimized Script
+```
+
+- The **Orchestrator** coordinates agents by assigning tasks and managing inter-agent communication.
+
+- 4 **Worker agents (A, B, C, D)** work in parallel to analyze Python code efficiency.
+
+- **Agent E** consolidates the suggested improvements from all agents into a comprehensive, cohesive report.
+
+- **Agent F** generates an optimized Python script by applying suggestions from the combined report.
+
+### Repository Structure
+
+```
+multi-agent-code-optimizer/
+│
+├── agents/
+│   ├── __init__.py
+│   ├── complexity_agent.py
+│   ├── optimizer_agent.py
+│   ├── profiler_agent.py
+│   ├── quality_agent.py
+│   ├── coordinator_agent.py
+│   └── code_generator_agent.py
+├── utils/
+│   ├── config.py
+│   └── orchestrator.py
+├── code_to_review/
+│   ├── example.py
+│   └── example_optimized.py
+├── .env
+├── main.py
+├── requirements.txt
+└── README.md
+```
+
+requirements.txt
+
+```
+ollama
+concurrent.futures
+python-dotenv
+```
+
+### Validation
 
 For example, given a script:
 
@@ -15,62 +81,4 @@ def factorial(n):
     return n * factorial(n - 1)
 ```
 
-Agents will analyze and respond like this:
-
-- **Agent A (Complexity Analyst):** Recursion gives O(n) time and O(n) space.
-
-- **Agent B (Optimizer):** Suggests using iteration to reduce recursion overhead.
-
-- **Agent C (Profiler):** Estimates runtime or memory footprint.
-
-- **Agent D (Code Quality Reviewer):** Checks style, readability, and best practices.
-
-### Roles of Each Agent
-
-| Agent                     | Role                           | Task                                                      |
-| ------------------------- | ------------------------------ | --------------------------------------------------------- |
-| **Complexity Analyst**    | Algorithm expert               | Estimate Big-O time and space complexity                  |
-| **Optimizer**             | Code performance expert        | Suggest faster or more memory-efficient approaches        |
-| **Profiler**              | System efficiency analyst      | Predict where bottlenecks could appear                    |
-| **Code Quality Reviewer** | Style & maintainability expert | Ensure Pythonic practices, readability, and documentation |
-
-### Architecture Overview
-
-You can implement this with:
-
-- A **Coordinator (Manager)** agent that assigns tasks.
-
-- 4 **Worker** agents (the ones above).
-
-They communicate through an **orchestrator** (your Python code).
-
-```
-Input Script → Coordinator → [Agent A, B, C, D in parallel]
-                               ↓
-                    Combined Report (from all agents)
-```
-
-### Environment Setup
-
-```
-multi_agent_code_review/
-│
-├── main.py
-├── agents/
-│   ├── __init__.py
-│   ├── complexity_agent.py
-│   ├── optimizer_agent.py
-│   ├── profiler_agent.py
-│   └── quality_agent.py
-├── utils/
-│   └── orchestrator.py
-└── requirements.txt
-```
-
-requirements.txt
-
-```
-ollama
-concurrent.futures
-python-dotenv
-```
+...TBC
