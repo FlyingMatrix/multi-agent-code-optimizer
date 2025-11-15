@@ -15,7 +15,7 @@ Design and build an advanced multi-agent framework that analyzes Python code eff
 | C     | Profiler              | Estimate the script’s runtime, CPU/GPU utilization, and memory footprint, and identify potential bottlenecks and scalability issues.                 |
 | D     | Code Quality Reviewer | Review code style, readability, and maintainability, and suggest clean-code improvements.                                                            |
 | E     | Coordinator           | Synthesize the findings from all agents into one comprehensive, cohesive report.                                                                     |
-| F     | Coder Generator       | Generate an optimized Python script based on suggested improvements, while maintaining original functionality and adhering to Python best practices. |
+| F     | Code Generator        | Generate an optimized Python script based on suggested improvements, while maintaining original functionality and adhering to Python best practices. |
 
 ### Architecture Overview
 
