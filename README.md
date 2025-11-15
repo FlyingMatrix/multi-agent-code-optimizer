@@ -62,12 +62,18 @@ multi-agent-code-optimizer/
 └── README.md
 ```
 
-requirements.txt
+> requirements.txt
 
 ```
 ollama
 concurrent.futures
 python-dotenv
+```
+
+> .env
+
+```
+MODEL = "llama3"
 ```
 
 ### Validation
