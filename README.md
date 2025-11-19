@@ -186,3 +186,50 @@ def factorial(value):
     else:
         return math.factorial(value)
 ```
+
+- **Responses** from `ChatGPT`:
+
+```
+1. Code 1 – Recursive Implementation
+
+Characteristics:
+- Recursion: Uses a classic recursive approach.
+- Base case: Only handles n == 0.
+- No error handling: Negative numbers will cause infinite recursion and eventually a RecursionError.
+- Efficiency: Recursive calls create a new stack frame each time; not memory-efficient for large n.
+- Simplicity: Very simple and concise.
+
+Example behavior:
+    factorial(5)  # returns 120
+    factorial(-1) # RecursionError
+
+2. Code 2 – Using math.factorial
+
+Characteristics:
+- Uses built-in function: Delegates actual factorial calculation to math.factorial.
+- Error handling: Properly raises a ValueError for negative inputs.
+- Efficiency: Very fast, implemented in C internally; avoids recursion in Python.
+- Handles edge cases: Explicitly handles 0 and 1.
+- Extra overhead: Slightly longer due to the conditional checks, but negligible compared to efficiency gain for large numbers.
+
+Example behavior:
+    factorial(5)  # returns 120
+    factorial(-1) # raises ValueError
+    factorial(0)  # returns 1
+
+3. Key Differences
+
+| Feature                      | Code 1 (Recursive)                  | Code 2 (math.factorial)             |
+|------------------------------|-------------------------------------|-------------------------------------|
+| **Implementation**           | Pure Python recursion               | Uses built-in `math.factorial`      |
+| **Negative input handling**  | None (will crash)                   | Raises `ValueError`                 |
+| **Efficiency**               | Slower, uses stack frames           | Fast, implemented in C              |
+| **Edge cases**               | Only `n == 0`                       | `0` and `1` handled explicitly      |
+| **Readability**              | Simple and classic                  | Slightly longer but clearer intent  |
+| **Scalability**              | Poor for large `n` (stack overflow) | Excellent, can handle very large `n`|
+
+4. Recommendation
+
+- For learning / understanding recursion: Use Code 1.
+- For production / real applications: Use Code 2 because it is safe, fast, and handles errors.
+```
