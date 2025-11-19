@@ -113,13 +113,53 @@ MODEL = "llama3"
 
 ### 💡 Validation
 
-For example, consider the following script in `example.py`:
+For example, consider the following code in the script of  `example.py`:
 
 ```
 def factorial(n):
     if n == 0:
         return 1
-    return n * factorial(n - 1)
+    return n * factorial(n - 1)   
 ```
 
-...TBC
+Here is the final summary of optimization recommendations from the code optimizer:
+
+```
+======== Final Summary ========
+ The results are an analysis of a recursive function calculating the factorial of a given integer `n`. The analysis includes:
+
+1. **Complexity Analysis**: The time complexity is O(n) because each recursive call reduces the value of `n` by 1, and the number of calls grows linearly with `n`. 
+The space complexity is also O(n) due to the creation of new stack frames for each recursive call.
+2. **Code Quality Review**: The code is easy to understand, but there are some minor issues:
+        * Readability: The intention is clear, but there's no docstring explaining what the function does or its parameters.
+        * Maintainability: The code is simple and doesn't have any complex logic or dependencies, making it relatively easy to maintain.
+        * PEP8 Adherence: There are some minor issues with indentation and spacing between lines.
+3. **Optimization Suggestions**: To improve performance:
+        * Use iteration instead of recursion for better memory efficiency and speed.
+        * Follow Python best practices: use meaningful variable names, avoid unnecessary computations, and take advantage of built-in libraries (like `math.factorial`).
+4. **Profiling Insights**:
+        * The function has a time complexity of O(2^n), which means its running time grows exponentially with the input size `n`.
+        * CPU usage will increase rapidly as `n` grows.
+        * Memory usage will also grow linearly with `n`, but since each stack frame is relatively small, this should not be a major concern.
+5. **Suggestions**:
+        * Use an iterative approach to reduce CPU usage and improve scalability.
+        * Implement memoization to avoid redundant computations.
+        * Optimize the recursive function by reducing the number of recursive calls or using more efficient algorithms.
+
+The optimized code uses an iterative approach, initializes the result to 1 instead of calculating it inside the loop, and takes advantage of the built-in `math.factorial` function from the Python standard library.
+Optimized code saved to: code_to_review\example_optimized.py
+```
+
+The optimized code in the script of `example_optimized.py`:
+
+```
+import math
+
+def factorial(value):
+    if value < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    elif value == 0 or value == 1:
+        return 1
+    else:
+        return math.factorial(value)  
+```
