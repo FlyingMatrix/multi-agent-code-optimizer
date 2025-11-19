@@ -122,7 +122,7 @@ def factorial(n):
     return n * factorial(n - 1)   
 ```
 
-- Final summary of optimization recommendations from the code optimizer:
+- **Final summary** of optimization recommendations from the code optimizer:
 
 ```
 ======== Final Summary ========
@@ -164,7 +164,7 @@ def factorial(value):
         return math.factorial(value)  
 ```
 
-- Comparison: since the multi-agent code optimizer uses Llama-3 as the agent model, we leverage ChatGPT to objectively compare the original and optimized code. The evaluation prompt is as follows:
+- **Comparison**: since the multi-agent code optimizer uses `Llama-3` as the agent model, we leverage `ChatGPT` to objectively compare the original and optimized code. The evaluation prompt is as follows:
 
 ```
 Please compare the following code: 
