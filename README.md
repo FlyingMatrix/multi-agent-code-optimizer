@@ -81,7 +81,7 @@ MODEL = "llama3"
 1. **Clone the repository:**
    
    ```bash
-   git clone https://github.com/flyingmatrix/multi-agent-code-optimizer
+   git clone https://github.com/flyingmatrix/multi-agent-code-optimizer.git
    cd ./multi-agent-code-optimizer
    ```
 
