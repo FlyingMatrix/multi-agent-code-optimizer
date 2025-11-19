@@ -2,11 +2,11 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-### Define the Target
+### 🚀 Define the Target
 
 Design and build an advanced multi-agent framework that analyzes Python code efficiency and outputs optimized code based on suggested improvements.
 
-### Roles of Each Agent
+### 🤖 Roles of Each Agent
 
 | Agent | Role                  | Task                                                                                                                                                 |
 | ----- | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@ Design and build an advanced multi-agent framework that analyzes Python code eff
 | E     | Coordinator           | Synthesize the findings from all agents into one comprehensive, cohesive report.                                                                     |
 | F     | Code Generator        | Generate an optimized Python script based on suggested improvements, while maintaining original functionality and adhering to Python best practices. |
 
-### Architecture Overview
+### 🛠️ Architecture Overview
 
 ```
 Input Script → Orchestrator → [Agent A, B, C, D in parallel]
@@ -37,7 +37,7 @@ Input Script → Orchestrator → [Agent A, B, C, D in parallel]
 
 - **Agent F** generates an optimized Python script by applying suggestions from the combined report.
 
-### Repository Structure
+### 🧩 Repository Structure
 
 ```
 multi-agent-code-optimizer/
@@ -62,7 +62,7 @@ multi-agent-code-optimizer/
 └── README.md
 ```
 
-> requirements.txt
+> `requirements.txt`
 
 ```
 ollama
@@ -70,15 +70,50 @@ concurrent.futures
 python-dotenv
 ```
 
-> .env
+> `.env`
 
 ```
 MODEL = "llama3"
 ```
 
-### Validation
+### 💻 Installation and Usage
 
-For example, given a script:
+1. **Clone the repository:**
+   
+   ```bash
+   git clone https://github.com/flyingmatrix/multi-agent-code-optimizer
+   ```
+
+2. **Create and activate a virtual environment (optional):**
+   
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. **Install the required dependencies:**
+   
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Pull Llama-3 model locally:**
+   
+   ```bash
+   ollama pull llama3
+   ```
+
+5. **Run the code optimizer:**
+   
+   Make sure that all Python scripts intended for optimization are located in the `code_to_review` directory. Then run:
+   
+   ```bash
+   python main.py
+   ```
+
+### 💡 Validation
+
+For example, consider the following script in `example.py`:
 
 ```
 def factorial(n):
