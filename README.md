@@ -82,6 +82,7 @@ MODEL = "llama3"
    
    ```bash
    git clone https://github.com/flyingmatrix/multi-agent-code-optimizer
+   cd ./multi-agent-code-optimizer
    ```
 
 2. **Create and activate a virtual environment (optional):**
