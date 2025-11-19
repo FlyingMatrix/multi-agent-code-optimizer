@@ -113,7 +113,7 @@ MODEL = "llama3"
 
 ### 💡 Validation
 
-For example, consider the following code in the script of  `example.py`:
+- For example, consider the following code in the script  `example.py`:
 
 ```
 def factorial(n):
@@ -122,7 +122,7 @@ def factorial(n):
     return n * factorial(n - 1)   
 ```
 
-Here is the final summary of optimization recommendations from the code optimizer:
+- Final summary of optimization recommendations from the code optimizer:
 
 ```
 ======== Final Summary ========
@@ -150,7 +150,7 @@ The optimized code uses an iterative approach, initializes the result to 1 inste
 Optimized code saved to: code_to_review\example_optimized.py
 ```
 
-The optimized code in the script of `example_optimized.py`:
+- The optimized code in the script `example_optimized.py`:
 
 ```
 import math
