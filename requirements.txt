@@ -1,0 +1,3 @@
+ollama
+concurrent.futures
+python-dotenv
