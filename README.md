@@ -111,7 +111,7 @@ MODEL = "llama3"
    python main.py
    ```
 
-### 💡 Validation
+### ✅ Validation
 
 - For example, consider the following code in the script  `example.py`:
 
@@ -162,4 +162,27 @@ def factorial(value):
         return 1
     else:
         return math.factorial(value)  
+```
+
+- Comparison: since the multi-agent code optimizer uses Llama-3 as the agent model, we leverage ChatGPT to objectively compare the original and optimized code. The evaluation prompt is as follows:
+
+```
+Please compare the following code: 
+
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1) 
+
+vs
+
+import math
+
+def factorial(value):
+    if value < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    elif value == 0 or value == 1:
+        return 1
+    else:
+        return math.factorial(value)
 ```
